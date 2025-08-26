@@ -1,5 +1,6 @@
 import React from "react";
 import Presentation from "./components/home";
+import Experiencie from "./components/experiencie";
 
 export default function Home() {
   return (
@@ -9,6 +10,9 @@ export default function Home() {
       </div>
       <div className="m-10 my-20">
         <Presentation />
+      </div>
+      <div className="m-10 my-20">
+        <Experiencie />
       </div>
     </div>
   );
