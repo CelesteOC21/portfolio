@@ -1,13 +1,16 @@
 export default function Presentation() {
   return (
     <div className="relative max-w-4xl mx-auto px-4">
-      <h2 className="text-[32px] sm:text-[36px] lg:text-[40px] font-bold mb-6 text-center lg:text-left">
-        About Me
-      </h2>
+      <div className="flex  justify-start">
+        <div className="text-center space-y-8">
+          <h1 className="text-[rgb(5,_112,_184,_0.7)] text-6xl md:text-5xl font-bold tracking-widest transform transition-all duration-500 hover:scale-105">
+            About me
+          </h1>
+          <div className="w-32 h-1 bg-gradient-to-r mx-auto opacity-60"></div>
+        </div>
+      </div>
 
-      {/* Contenedor principal */}
       <div className="relative flex flex-col lg:flex-row dark:border-gray-600 outline-1 outline-gray-600 rounded-lg p-6 lg:p-10">
-        {/* Texto */}
         <div className="flex-1 text-center lg:text-left text-base sm:text-lg lg:text-xl pr-0 lg:pr-56">
           <p className="font-extralight">
             I am a<span className="font-bold"> Computer systems engineer </span>
@@ -24,7 +27,6 @@ export default function Presentation() {
           </p>
         </div>
 
-        {/* Imagen flotante */}
         <div className="absolute hidden lg:block right-[-8rem] top-1/2 -translate-y-1/2">
           <img
             src="../celes.png"
@@ -33,7 +35,6 @@ export default function Presentation() {
           />
         </div>
 
-        {/* Imagen normal para móviles */}
         <div className="flex justify-center mt-6 lg:hidden">
           <img
             src="../celes.png"

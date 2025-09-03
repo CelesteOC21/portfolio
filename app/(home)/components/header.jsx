@@ -7,10 +7,10 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-white shadow-sm dark:bg-gray-900">
+    <nav className="bg-gray-900">
       <div className="w-full px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
-          <div className="flex-shrink-0 text-xl font-bold text-gray-800 dark:text-white">
+          <div className="flex-shrink-0 text-xl font-bold text-gray-300 dark:text-white">
             MyPortfolio
           </div>
 
@@ -26,31 +26,31 @@ export default function Navbar() {
           <div className="hidden lg:flex space-x-4">
             <Link
               href="/"
-              className="rounded-md px-5 py-2 text-md font-medium text-gray-600 dark:text-gray-300 hover:bg-white/5 hover:text-white"
+              className="rounded-md px-5 py-2 text-md font-medium text-gray-300 dark:text-gray-300 hover:bg-white/5 hover:text-white"
             >
               Home
             </Link>
             <Link
               href="#experience"
-              className="rounded-md px-5 py-2 text-md font-medium text-gray-600 dark:text-gray-300 hover:bg-white/5 hover:text-white"
+              className="rounded-md px-5 py-2 text-md font-medium text-gray-300 dark:text-gray-300 hover:bg-white/5 hover:text-white"
             >
               Experience
             </Link>
             <Link
               href="#technologies"
-              className="rounded-md px-5 py-2 text-md font-medium text-gray-600 dark:text-gray-300 hover:bg-white/5 hover:text-white"
+              className="rounded-md px-5 py-2 text-md font-medium text-gray-300 dark:text-gray-300 hover:bg-white/5 hover:text-white"
             >
               Technologies
             </Link>
             <Link
               href="#studies"
-              className="rounded-md px-5 py-2 text-md font-medium text-gray-600 dark:text-gray-300 hover:bg-white/5 hover:text-white"
+              className="rounded-md px-5 py-2 text-md font-medium text-gray-300 dark:text-gray-300 hover:bg-white/5 hover:text-white"
             >
               Studies
             </Link>
             <Link
               href="#contact"
-              className="rounded-md px-5 py-2 text-md font-medium text-gray-600 dark:text-gray-300 hover:bg-white/5 hover:text-white"
+              className="rounded-md px-5 py-2 text-md font-medium text-gray-300 dark:text-gray-300 hover:bg-white/5 hover:text-white"
             >
               Contact
             </Link>

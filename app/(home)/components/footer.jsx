@@ -1,9 +1,9 @@
 export default function Footer() {
   return (
     <div>
-      <footer className="bg-white shadow-sm dark:bg-gray-900">
-        <div className="w-full max-w-screen-xl mx-auto p-4 md:py-8">
-          <div className="sm:flex sm:items-center sm:justify-around">
+      <footer className="bg-gray-900 mt-10">
+        <div className="w-full max-w-screen-xl mx-auto p-4 md:py-8 ">
+          <div className="sm:flex sm:items-center sm:justify-around mt-10">
             <a
               href="https://www.linkedin.com/in/celeste-oc"
               className=" hover:bg-white/5 hover:text-white py-2 px-3 rounded-md  flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse"
