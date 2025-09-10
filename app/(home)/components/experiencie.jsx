@@ -1,57 +1,10 @@
+"use client";
 import React from "react";
-import { Button } from "@/components/ui/button";
-import { GoArrowUpRight } from "react-icons/go";
 import Technologies from "./technologies";
+import { experiences } from "../technologies";
+import { Slider } from "./slider";
 
 export default function Experiencie() {
-  const experiences = [
-    {
-      title: "+IDEAS",
-      position: "Full Stack Developer – Professional Intership",
-      description:
-        "Designed and developed a web application for internal process management. Implemented secure authentication and role management using NextAuth. Worked with PostgreSQL and Prisma ORM; deployed the app using Vercel. Implemented technologies: Next.js, Shadcn UI, TailwindCSS, Zod. Applied version control and project management using Git, GitHub, and Jira. Followed Agile methodologies such as Scrum for team collaboration. Integrated third-party services like UploadThing for image handling ",
-      date: "Jalisco, México  January – June 2025  ",
-      technologies: [
-        "JavaScript",
-        "PostgreSQL",
-        "Prisma",
-        "ShaddcnUI",
-        "TailwindCss",
-        "Zod",
-        "Git",
-        "GitHub",
-        "Jira",
-        "ReactHookForm",
-        "Next",
-      ],
-    },
-
-    {
-      title: "GYM",
-      position: "Full Stack Developer – Academic Project",
-      description:
-        "Developed a subscription payment platform for a gym. Implemented JWT-based authentication. Integrated payment gateway using Mercado Pago. Used React.js for the frontend and Node.js with Express for the backend. Database: MySQL.",
-
-      date: "Jalisco, México  January – June 2025  ",
-      technologies: [
-        "JavaScript",
-        "MySQL",
-        "React",
-        "Node",
-        "Express",
-        "Bootstrap",
-      ],
-    },
-    {
-      title: "Web Application Project",
-      position: "Web Developer – Academic Project",
-      description:
-        "Built a web application using React and Bootstrap for the frontend. Backend developed with Laravel and PHP, consuming external APIs. Implemented pagination to enhance navigation and user experience. Used Bootstrap to create a responsive web interface.",
-      date: "Jalisco, México  August – December 2024   ",
-      technologies: ["Laravel", "PHP", "Bootstrap", "JavaScript", "React"],
-    },
-  ];
-
   return (
     <div>
       <div className="flex items-center justify-center ">
@@ -103,13 +56,7 @@ export default function Experiencie() {
                 <div className="mb-4 sm:mb-0">
                   <Technologies technologies={experience.technologies} />
                 </div>
-
-                <div>
-                  <Button className="group bg-transparent border border-blue-500/50 text-blue-300 hover:bg-blue-500/10 hover:border-blue-400 hover:text-blue-200 transition-all duration-200 ">
-                    <span>View Gallery</span>
-                    <GoArrowUpRight className="transition-transform duration-300 group-hover:translate-x-0.5" />
-                  </Button>
-                </div>
+                <Slider images={experience.images} />
               </div>
             </div>
           ))}
