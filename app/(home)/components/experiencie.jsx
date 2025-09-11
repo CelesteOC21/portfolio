@@ -20,7 +20,7 @@ export default function Experiencie() {
       <div
         className="container w-auto mx-auto sm:max-w-7xl p-4 "
         data-aos="fade-up"
-        data-aos-duration="3000"
+        data-aos-duration="500"
       >
         <div className="grid grid-cols-1 grid-rows-auto gap-6">
           {experiences.map((experience, index) => (
