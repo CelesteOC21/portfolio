@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
     <div>
-      <footer className="bg-gray-900 mt-10">
+      <footer className="bg-gray-900 mt-10" id="contactAndStudies">
         <div className="w-full max-w-screen-xl mx-auto p-4 md:py-8 ">
           <div className="sm:flex sm:items-center sm:justify-around mt-10">
             <a

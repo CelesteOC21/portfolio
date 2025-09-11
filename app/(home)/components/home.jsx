@@ -1,9 +1,9 @@
 export default function Presentation() {
   return (
-    <div className="relative max-w-4xl mx-auto px-4">
+    <div className="relative max-w-4xl mx-auto px-4" data-aos="fade-up">
       <div className="flex  justify-start">
         <div className="text-center space-y-8">
-          <h1 className="text-[rgb(5,_112,_184,_0.7)] text-6xl md:text-5xl font-bold tracking-widest transform transition-all duration-500 hover:scale-105">
+          <h1 className="text-[rgb(5,_112,_184,_0.7)] text-3xl md:text-5xl font-bold tracking-widest transform transition-all duration-500 hover:scale-105">
             About me
           </h1>
           <div className="w-32 h-1 bg-gradient-to-r mx-auto opacity-60"></div>

@@ -6,8 +6,8 @@ import { Slider } from "./slider";
 
 export default function Experiencie() {
   return (
-    <div>
-      <div className="flex items-center justify-center ">
+    <div id="experience">
+      <div className="flex items-center justify-center " data-aos="fade-up">
         <div className="text-center space-y-8">
           <h1 className="  text-[rgb(5,_112,_184,_0.7)] text-3xl md:text-5xl font-bold tracking-widest transform transition-all duration-500 hover:scale-105">
             Experiencies
@@ -17,7 +17,11 @@ export default function Experiencie() {
         </div>
       </div>
 
-      <div className="container w-auto mx-auto sm:max-w-7xl p-4 ">
+      <div
+        className="container w-auto mx-auto sm:max-w-7xl p-4 "
+        data-aos="fade-up"
+        data-aos-duration="3000"
+      >
         <div className="grid grid-cols-1 grid-rows-auto gap-6">
           {experiences.map((experience, index) => (
             <div
