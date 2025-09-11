@@ -1,5 +1,7 @@
 import { Montserrat } from "next/font/google";
 import "./globals.css";
+import AOSInitializer from "@/components/ui/AOSInitializer";
+import "aos/dist/aos.css";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -13,7 +15,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${montserrat.className} antialiased `}>{children}</body>
+      <body className={`${montserrat.className} antialiased `}>
+        <AOSInitializer />
+        {children}
+      </body>
     </html>
   );
 }
