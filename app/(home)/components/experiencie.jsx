@@ -56,11 +56,13 @@ export default function Experiencie() {
                   )}
                 </div>
               </div>
-              <div className="mt-4 flex justify-between items-end sm:flex-col sm:items-center sm:gap-4">
+              <div className="mt-4 flex justify-center items-center flex-col sm:items-center sm:gap-4">
                 <div className="mb-4 sm:mb-0">
                   <Technologies technologies={experience.technologies} />
                 </div>
-                <Slider images={experience.images} />
+                <div className="mt-2">
+                  <Slider images={experience.images} />
+                </div>
               </div>
             </div>
           ))}
