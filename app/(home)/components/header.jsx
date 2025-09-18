@@ -37,7 +37,7 @@ export default function Navbar() {
               Experience
             </Link>
             <Link
-              href="#contactAndStudies"
+              href="#contact"
               className="rounded-md px-5 py-2 text-md font-medium text-gray-300 dark:text-gray-300 hover:bg-white/5 hover:text-white"
             >
               Contact
