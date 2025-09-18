@@ -8,7 +8,7 @@ export default function Experiencie() {
   return (
     <div id="experience">
       <div className="flex items-center justify-center " data-aos="fade-up">
-        <div className="text-center space-y-8">
+        <div className="text-center ">
           <h1 className="  text-[rgb(5,_112,_184,_0.7)] text-3xl md:text-5xl font-bold tracking-widest transform transition-all duration-500 hover:scale-105">
             Experiencies
           </h1>
