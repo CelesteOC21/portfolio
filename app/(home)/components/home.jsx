@@ -1,5 +1,5 @@
 "use client";
-import SplitText from "./SplitText";
+import SplitText from "./splitText";
 import Orb from "../../orb";
 
 export default function Presentation() {
