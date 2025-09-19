@@ -29,11 +29,11 @@ export default function Presentation() {
         </div>
       </div>
 
-      <div className="flex flex-col items-center justify-center lg:flex-row lg:items-center gap-8 mt-6">
+      <div className="border  border-slate-700 rounded-md flex flex-col  lg:flex-row lg:items-center gap-8 mt-6">
         {/* Contenedor para la imagen y la animación */}
-        <div className=" relative flex h-96 w-96">
+        <div className=" relative flex md:h-96 md:w-96 items-center justify-center">
           {/* Capa de la animación (detrás) */}
-          <div className="h-96 w-96">
+          <div className="absolute inset-0">
             <Orb
               hoverIntensity={0.5}
               rotateOnHover={true}
@@ -42,17 +42,17 @@ export default function Presentation() {
             />
           </div>
 
-          <div className=" absolute inset-0 flex items-center justify-center">
+          <div className=" flex items-center justify-center">
             <img
               src="../celes.png"
               alt="Profile"
-              className="w-64 h-64 rounded-full object-cover"
+              className="w-60 h-60 rounded-full object-cover"
             />
           </div>
         </div>
 
         {/* Contenido del texto */}
-        <div className="text-base lg:text-left max-w-lg">
+        <div className="text-balance text-center lg:text-left max-w-lg">
           <p className="font-extralight sm:text-xl text-based">
             I am a<span className="font-bold"> Computer systems engineer </span>
             with experience in full-stack web application development. I have
