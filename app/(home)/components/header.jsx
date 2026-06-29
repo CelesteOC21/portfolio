@@ -1,71 +1,100 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 
+const navLinks = [
+  { label: "Home", href: "#home" },
+  { label: "Experience", href: "#experience" },
+  { label: "Contact", href: "#contact" },
+];
+
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
+
+  useEffect(() => {
+    const sectionIds = ["home", "experience", "contact"];
+    const observers = [];
+
+    sectionIds.forEach((id) => {
+      const element = document.getElementById(id);
+      if (!element) return;
+
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setActiveSection(id);
+          }
+        },
+        { threshold: 0.3, rootMargin: "-80px 0px 0px 0px" }
+      );
+
+      observer.observe(element);
+      observers.push(observer);
+    });
+
+    return () => observers.forEach((o) => o.disconnect());
+  }, []);
+
+  const handleNavClick = () => {
+    setIsOpen(false);
+  };
 
   return (
-    <nav className="bg-gray-900 fixed top-0 left-0 w-full z-50  shadow-md">
-      <div className="w-full px-4 sm:px-6 lg:px-8">
+    <nav className="glass-nav fixed top-0 left-0 w-full z-50">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
-          <div className="flex-shrink-0 text-xl font-bold text-gray-300 dark:text-white">
+          <Link
+            href="#home"
+            className="text-xl font-bold text-white/90 hover:text-white transition-colors"
+          >
             MyPortfolio
-          </div>
+          </Link>
 
-          <div className="lg:hidden">
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-800 dark:text-gray-300 hover:text-gray-600 dark:hover:text-white focus:outline-none"
-            >
-              {isOpen ? <X size={28} /> : <Menu size={28} />}
-            </button>
-          </div>
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label={isOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isOpen}
+            className="lg:hidden text-gray-300 hover:text-white focus:outline-none p-2 rounded-md hover:bg-white/5 transition-colors"
+          >
+            {isOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
 
-          <div className="hidden lg:flex space-x-4">
-            <Link
-              href="#/"
-              className="rounded-md px-5 py-2 text-md font-medium text-gray-300 dark:text-gray-300 hover:bg-white/5 hover:text-white"
-            >
-              Home
-            </Link>
-            <Link
-              href="#experience"
-              className="rounded-md px-5 py-2 text-md font-medium text-gray-300 dark:text-gray-300 hover:bg-white/5 hover:text-white"
-            >
-              Experience
-            </Link>
-            <Link
-              href="#contact"
-              className="rounded-md px-5 py-2 text-md font-medium text-gray-300 dark:text-gray-300 hover:bg-white/5 hover:text-white"
-            >
-              Contact
-            </Link>
+          <div className="hidden lg:flex items-center gap-1">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={handleNavClick}
+                className={`relative px-4 py-2 text-sm font-medium transition-colors rounded-md ${
+                  activeSection === link.href.replace("#", "")
+                    ? "text-white bg-white/10"
+                    : "text-gray-400 hover:text-white hover:bg-white/5"
+                }`}
+              >
+                {link.label}
+              </Link>
+            ))}
           </div>
         </div>
 
         {isOpen && (
-          <div className="lg:hidden mt-2 space-y-2 pb-4">
-            <Link
-              href="/"
-              className="block rounded-md px-4 py-2 text-md font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700"
-            >
-              Home
-            </Link>
-            <Link
-              href="#experience"
-              className="block rounded-md px-4 py-2 text-md font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700"
-            >
-              Experience
-            </Link>
-
-            <Link
-              href="#contact"
-              className="block rounded-md px-4 py-2 text-md font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700"
-            >
-              Contact
-            </Link>
+          <div className="lg:hidden border-t border-white/5 py-4 space-y-1">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={handleNavClick}
+                className={`block px-4 py-3 rounded-md text-sm font-medium transition-colors ${
+                  activeSection === link.href.replace("#", "")
+                    ? "text-white bg-white/10"
+                    : "text-gray-400 hover:text-white hover:bg-white/5"
+                }`}
+              >
+                {link.label}
+              </Link>
+            ))}
           </div>
         )}
       </div>

@@ -171,6 +171,15 @@ export default function Orb({
     const container = ctnDom.current;
     if (!container) return;
 
+    let isVisible = true;
+    const visibilityObserver = new IntersectionObserver(
+      ([entry]) => {
+        isVisible = entry.isIntersecting;
+      },
+      { threshold: 0 }
+    );
+    visibilityObserver.observe(container);
+
     const renderer = new Renderer({ alpha: true, premultipliedAlpha: false });
     const gl = renderer.gl;
     gl.clearColor(0, 0, 0, 0);
@@ -249,6 +258,10 @@ export default function Orb({
     let rafId;
     const update = (t) => {
       rafId = requestAnimationFrame(update);
+      if (!isVisible) {
+        lastTime = t;
+        return;
+      }
       const dt = (t - lastTime) * 0.001;
       lastTime = t;
       program.uniforms.iTime.value = t * 0.001;
@@ -270,6 +283,7 @@ export default function Orb({
 
     return () => {
       cancelAnimationFrame(rafId);
+      visibilityObserver.disconnect();
       window.removeEventListener("resize", resize);
       container.removeEventListener("mousemove", handleMouseMove);
       container.removeEventListener("mouseleave", handleMouseLeave);

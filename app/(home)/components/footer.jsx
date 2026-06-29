@@ -3,14 +3,16 @@ import { Mail } from "lucide-react";
 export default function Footer() {
   return (
     <footer
-      className="w-full bg-slate-800/50 border-t border-slate-700 mt-10"
+      className="w-full bg-slate-800/30 backdrop-blur-md border-t border-slate-700/50 mt-10"
       id="contact"
     >
-      <div className="max-w-screen-xl mx-auto px-4 py-6">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-around gap-6">
           <a
             href="https://www.linkedin.com/in/celeste-oc"
-            className="hover:bg-white/5 py-2 px-3 rounded-md flex items-center gap-3"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:bg-white/5 py-2 px-3 rounded-md flex items-center gap-3 transition-colors"
           >
             <img
               src="https://images.seeklogo.com/logo-png/39/2/linkedin-new-2020-logo-png_seeklogo-393964.png"
@@ -22,7 +24,9 @@ export default function Footer() {
 
           <a
             href="https://github.com/CelesteOC21?tab=repositories"
-            className="hover:bg-white/5 py-2 px-3 rounded-md flex items-center gap-3"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:bg-white/5 py-2 px-3 rounded-md flex items-center gap-3 transition-colors"
           >
             <img
               src="https://icones.pro/wp-content/uploads/2021/06/icone-github-noir.png"

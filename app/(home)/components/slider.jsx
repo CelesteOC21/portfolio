@@ -24,10 +24,10 @@ export function Slider({ images }) {
           <GoArrowUpRight className="transition-transform duration-300 group-hover:translate-x-0.5" />
         </Button>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[1000px] bg-gradient-to-br from-slate-900 bg-slate-800/50 border border-slate-700 rounded-lg shadow-lg p-0">
-        <DialogHeader className="flex items-start justify-between p-4 border-b bg-slate-800/50 border-slate-700">
+      <DialogContent className="sm:max-w-[1000px] bg-slate-900/80 backdrop-blur-xl border border-slate-700/50 rounded-lg shadow-2xl p-0">
+        <DialogHeader className="flex items-start justify-between p-4 border-b bg-white/5 border-white/10">
           <DialogTitle className="text-lg font-semibold text-white">
-            Images
+            Project Gallery
           </DialogTitle>
         </DialogHeader>
         <Carousel className="p-2 pt-2">
@@ -37,8 +37,9 @@ export function Slider({ images }) {
                 <div className="flex items-center justify-center rounded-md h-[200px] md:h-[400px] w-full">
                   <img
                     src={src || "/placeholder.svg"}
-                    className="m-6 h-full w-full   rounded-md"
-                    alt={`Image ${index + 1}`}
+                    className="m-6 h-full w-full rounded-md object-cover"
+                    alt={`Project screenshot ${index + 1}`}
+                    loading="lazy"
                   />
                 </div>
               </CarouselItem>
